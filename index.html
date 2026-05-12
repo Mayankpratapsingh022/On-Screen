@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>On Screen</title>
+    <meta
+      name="description"
+      content="On Screen is an Android assistant experiment that can guide and perform native phone tasks through accessibility."
+    >
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <nav aria-label="Primary navigation">
+        <a href="#download">Download</a>
+        <a href="#how">How it works</a>
+        <a href="#risks">Risks</a>
+      </nav>
+
+      <a class="app-mark" href="#top" aria-label="On Screen home">
+        <span>On Screen</span>
+        <video
+          autoplay
+          loop
+          muted
+          playsinline
+          width="56"
+          height="56"
+          aria-hidden="true"
+        >
+          <source src="assets/icons/on-screen-icon-intro-transparent.webm" type="video/webm">
+          <source src="assets/icons/on-screen-icon-intro-transparent.mov" type="video/quicktime">
+        </video>
+      </a>
+    </header>
+
+    <main id="top" class="page">
+      <section class="intro" aria-labelledby="title">
+        <div class="terminal-kicker" aria-label="Android assistant experiment">
+          <span class="terminal-text">Android assistant experiment</span>
+          <span class="terminal-cursor" aria-hidden="true"></span>
+        </div>
+        <h1 id="title">On Screen</h1>
+        <p class="lede">
+          So this is On Screen. It can do native tasks on your phone, so you do
+          not have to worry about every small thing yourself.
+        </p>
+        <p>
+          I saw Farza's video about
+          <a href="https://www.heyclicky.com/" target="_blank" rel="noopener noreferrer">Clicky</a>,
+          an agent that can do tasks on your PC, and I kept thinking: why not
+          build something like this for phones? Farza is also building Clicky for
+          phones, which is awesome. That is why I built On Screen.
+        </p>
+        <p>
+          The first version is for people who want to test the idea, give
+          feedback, and help figure out what would make a phone agent more
+          reliable.
+        </p>
+
+        <div class="download-row" id="download">
+          <a
+            class="primary-link"
+            href="https://github.com/Mayankpratapsingh022/On-Screen/releases/latest/download/on-screen.apk"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Download APK
+          </a>
+          <a href="downloads/on-screen.apk" download>Local APK fallback</a>
+          <a href="downloads/on-screen.apk.sha1">SHA-1</a>
+        </div>
+      </section>
+
+      <section aria-labelledby="why">
+        <h2 id="why">Why this exists</h2>
+        <p>
+          You know how older parents keep asking, "How do I do this on my phone?
+          How do I do that on my phone?" Whenever I am in my hometown, this
+          happens a lot.
+        </p>
+        <p>
+          It is not always possible for someone to be available for every small
+          query. On Screen is an attempt at a 24/7 phone guide that can look at
+          the current screen, understand the visible controls, and help complete
+          the next step.
+        </p>
+        <p>
+          The guide part is only a small piece of it. The main idea is an
+          autonomous phone agent that can understand what is on screen and carry
+          out native tasks on your phone.
+        </p>
+      </section>
+
+      <section id="how" aria-labelledby="how-title">
+        <h2 id="how-title">How version one works</h2>
+        <div class="note-grid">
+          <article>
+            <div class="note-heading">
+              <img src="assets/icons/key.svg" alt="">
+              <h3>Bring your own API key</h3>
+            </div>
+            <p>
+              The public app is mainly the cloud version for now. Paste your
+              OpenAI API key in the app, optionally add a Brave Search key, then
+              press play to launch the agent.
+            </p>
+          </article>
+          <article>
+            <div class="note-heading">
+              <img src="assets/icons/security.svg" alt="">
+              <h3>No backend from me</h3>
+            </div>
+            <p>
+              Agent memory is stored on your phone. I am not storing your data
+              on my server because there is no backend from my side. In cloud
+              mode, the model provider still receives the data you send to it.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section aria-labelledby="branches">
+        <h2 id="branches">Two branches</h2>
+        <p>
+          There are two directions: cloud and on-device. The demo version uses
+          cloud real-time model APIs because that is the usable path today.
+        </p>
+        <p>
+          I also experimented with On Screen Offline: whisper.cpp for speech to
+          text, Gemma as the vision-language model, and Kitten TTS for speech.
+          The idea is exciting because privacy is better and there are no model
+          API costs, but it is currently very slow and can heat the phone.
+        </p>
+        <p>
+          For a future version, I want to explore smaller on-device models,
+          mobile GUI grounding, supervised fine-tuning on mobile action data,
+          and RL on AndroidWorld-style tasks.
+        </p>
+      </section>
+
+      <section id="risks" aria-labelledby="risks-title">
+        <h2 id="risks-title">Before installing</h2>
+        <ul>
+          <li>
+            Android or Play Protect may treat the app as suspicious because it
+            uses accessibility permissions and can control the screen.
+          </li>
+          <li class="risk-highlight">
+            <img src="assets/icons/security.svg" alt="">
+            <span>
+              <strong>Payment, banking, wallet, or protected apps may not work
+              while this app is installed.</strong> They block tools like this
+              for security, so you may not be able to use some payment flows
+              until you uninstall On Screen. I plan to fix or reduce this in
+              the next version.
+            </span>
+          </li>
+          <li>
+            The cloud version can consume a lot of tokens. Keep your OpenAI usage
+            panel open while testing.
+          </li>
+          <li>
+            This is version one. It can hallucinate, get stuck, or move to a new
+            task before finishing the current one.
+          </li>
+          <li>
+            Like any app that can operate your device, test carefully and
+            uninstall it after testing if you do not need it.
+          </li>
+        </ul>
+      </section>
+
+      <section aria-labelledby="feedback">
+        <h2 id="feedback">Feedback I need</h2>
+        <p>
+          Technical feedback would be especially useful. If you know Android,
+          accessibility services, phone systems, on-device ML, GUI grounding, or
+          agent training, tell me what could make this faster and more robust.
+        </p>
+        <p>
+          I spent about five days building and experimenting with this version.
+          Your comments and ideas will decide whether version two should exist.
+        </p>
+        <p class="feedback-callout">
+          <span>Send feedback in DMs:</span>
+          <a class="linkedin-button" href="https://www.linkedin.com/in/mayankpratapsingh022/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a class="x-button" href="https://x.com/Mayank_022" target="_blank" rel="noopener noreferrer">X</a>
+        </p>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>On Screen</span>
+      <a href="#download">Download APK</a>
+    </footer>
+  </body>
+</html>
