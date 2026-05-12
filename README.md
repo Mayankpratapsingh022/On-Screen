@@ -5,7 +5,7 @@ perform native phone tasks through accessibility.
 
 ## Links
 
-- Website: https://mayankpratapsingh022.github.io/On-Screen/
+- Website: https://onscreen.mayankpratapsingh.in/
 - Latest APK: https://github.com/Mayankpratapsingh022/On-Screen/releases/latest/download/on-screen.apk
 
 ## About
