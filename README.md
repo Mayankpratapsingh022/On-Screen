@@ -1,61 +1,34 @@
 # On Screen
 
-Public website and APK download page for On Screen, an Android assistant
-experiment that can guide and perform native phone tasks through accessibility.
+Public website for On Screen, an Android assistant experiment that can guide and
+perform native phone tasks through accessibility.
 
-## Repository
+## Links
 
-GitHub repository name: `On-Screen`
+- Website: https://mayankpratapsingh022.github.io/On-Screen/
+- Latest APK: https://github.com/Mayankpratapsingh022/On-Screen/releases/latest/download/on-screen.apk
 
-GitHub repository description:
+## About
 
-> Public website and APK download page for On Screen, an Android assistant experiment.
+On Screen is a bring-your-own-API-key Android assistant. It uses screen context,
+accessibility controls, speech, and model APIs to help complete native phone
+tasks.
 
-Expected GitHub Pages URL:
+This first version is an experiment for testing the idea, collecting feedback,
+and learning what would make a phone agent more reliable.
 
-```text
-https://mayankpratapsingh022.github.io/On-Screen/
-```
+## Site
 
-## Contents
+The website is a static GitHub Pages site. There is no build step.
 
-- `index.html` and `styles.css`: static GitHub Pages site.
-- `assets/icons/`: copied app icons used by the page.
-- `assets/icons/on-screen-icon-intro-transparent.webm`: optimized icon animation used by browsers.
-- `assets/icons/on-screen-icon-intro-transparent.mov`: smaller transparent MOV fallback.
-- `downloads/on-screen.apk`: checked-in APK fallback.
-- `downloads/on-screen.apk.sha1`: checksum for the checked-in APK.
+- `index.html`: page content
+- `styles.css`: page styles
+- `assets/icons/`: icons and app animation
 
 ## Local preview
 
-Open `index.html` directly in a browser. There is no build step.
+Open `index.html` directly in a browser, or serve this folder with any static
+file server.
 
-## Publishing
-
-GitHub repository names cannot contain spaces, so use `On-Screen` for the repo
-slug while keeping the product name as `On Screen`.
-
-Create a public repository, push this folder, then enable GitHub Pages from the
-repository root on the `main` branch.
-
-```bash
-gh repo create Mayankpratapsingh022/On-Screen \
-  --public \
-  --description "Public website and APK download page for On Screen, an Android assistant experiment." \
-  --source . \
-  --remote origin \
-  --push
-```
-
-Upload the APK as a release asset named `on-screen.apk` so the primary download
-button points to the latest build:
-
-```bash
-gh release create v0.1.0 downloads/on-screen.apk \
-  --repo Mayankpratapsingh022/On-Screen \
-  --title "On Screen 0.1.0" \
-  --notes "Initial APK build."
-```
-
-If you use a different repository name, update the release download URL in
-`index.html` before publishing.
+APK builds are distributed through GitHub Releases instead of being stored in the
+website source.
